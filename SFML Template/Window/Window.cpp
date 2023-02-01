@@ -3,6 +3,11 @@
 Window::Window()
 {
 	initWindow();
+
+	ruler.backgroundColor(sf::Color(255, 100, 25));
+	ruler.lineColor(sf::Color(0, 0, 0));
+
+	ruler.generate(*window);
 }
 
 Window::~Window()
@@ -24,6 +29,8 @@ void Window::run()
 void Window::render()
 {
 	window->clear();
+	
+	ruler.display(*window);
 
 	window->display();
 }
@@ -60,5 +67,5 @@ void Window::updateSFMLEvents()
 
 void Window::initWindow()
 {
-	window = new sf::RenderWindow(sf::VideoMode(100, 100), "TITLE", sf::Style::Default);
+	window = new sf::RenderWindow(sf::VideoMode(500, 300), "TITLE", sf::Style::Default);
 }

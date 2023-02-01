@@ -1,5 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
+#include "../Ruler.h"
 
 class Window
 {
@@ -21,5 +22,8 @@ private:
 
 	sf::RenderWindow* window;
 	sf::Event event;
+
+
+	Ruler ruler;
 };
 
