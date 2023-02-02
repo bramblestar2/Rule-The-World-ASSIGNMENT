@@ -7,7 +7,9 @@ Window::Window()
 	ruler.backgroundColor(sf::Color(255, 100, 25));
 	ruler.lineColor(sf::Color(0, 0, 0));
 
-	ruler.generate(*window);
+	iterations = 5;
+
+	ruler.generate(*window, iterations);
 }
 
 Window::~Window()
@@ -59,6 +61,16 @@ void Window::updateSFMLEvents()
 				case sf::Keyboard::Escape:
 						window->close();
 						break;
+				case sf::Keyboard::Left:
+					if (iterations > 0)
+						iterations--;
+
+					ruler.generate(*window, iterations);
+					break;
+				case sf::Keyboard::Right:
+					iterations++;
+					ruler.generate(*window, iterations);
+					break;
 				}
 				break;
 		}

@@ -5,7 +5,7 @@
 class Ruler
 {
 public:
-	void generate(const sf::RenderWindow& window);
+	void generate(const sf::RenderWindow& window, const int iterations);
 
 	void display(sf::RenderWindow& window);
 
@@ -19,6 +19,7 @@ private:
 	sf::RectangleShape m_background;
 	std::vector<sf::RectangleShape> m_lines;
 
-	bool recurvise_lines(const double left, const double right, const float line_length, const int iterations);
+	bool recurvise_lines(const double left, const double right,
+		const float line_width, const float line_length, const int iterations);
 };
 

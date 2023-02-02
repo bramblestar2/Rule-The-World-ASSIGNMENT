@@ -23,7 +23,7 @@ private:
 	sf::RenderWindow* window;
 	sf::Event event;
 
-
+	int iterations;
 	Ruler ruler;
 };
 
